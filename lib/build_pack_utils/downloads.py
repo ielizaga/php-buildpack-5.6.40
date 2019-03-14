@@ -31,6 +31,7 @@ class Downloader(object):
     def download(self, url, toFile):
         compile_exts = CompileExtensions(self._ctx['BP_DIR'])
         exit_code, translated_uri = compile_exts.download_dependency(url, toFile)
+        print 'URL %s' % url
 
         if exit_code == 0:
             print "Downloaded [%s] to [%s]" % (translated_uri, toFile)
